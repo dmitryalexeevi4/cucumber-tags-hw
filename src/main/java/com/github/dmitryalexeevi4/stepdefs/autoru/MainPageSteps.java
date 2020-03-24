@@ -1,12 +1,14 @@
-package com.github.dmitryalexeevi4.cucumber.stepdefs;
+package com.github.dmitryalexeevi4.stepdefs.autoru;
 
-import com.github.dmitryalexeevi4.*;
+import com.github.dmitryalexeevi4.stepdefs.StepMethods;
+import com.github.dmitryalexeevi4.pages.autoru.CarsPage;
+import com.github.dmitryalexeevi4.pages.autoru.MainPage;
 import io.cucumber.java.ru.*;
 import org.testng.Assert;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class MainPageSteps {
+public class MainPageSteps extends StepMethods {
     MainPage mainPage = new MainPage();
     CarsPage carsPage = new CarsPage();
     int expectedAdvCount = 0, actualAdvCount = 0;
@@ -17,7 +19,7 @@ public class MainPageSteps {
     }
 
     @Тогда("открывается страница, в названии которой содержится текст {string}")
-    public void mainPageTitleCheck(String prefix) {
+    public void titleCheck(String prefix) {
         Assert.assertTrue(title().startsWith(prefix));
     }
 
@@ -32,7 +34,7 @@ public class MainPageSteps {
     }
 
     @Тогда("открывается страница, в названии которой содержится текст - {string}")
-    public void carPageTitleCheck(String buyCarMark) {
+    public void anotherTitleCheck(String buyCarMark) {
         Assert.assertTrue(title().startsWith(buyCarMark));
         actualAdvCount = carsPage.getAdvCount();
         Assert.assertEquals(actualAdvCount, expectedAdvCount);

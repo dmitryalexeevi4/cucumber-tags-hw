@@ -1,4 +1,4 @@
-package com.github.dmitryalexeevi4;
+package com.github.dmitryalexeevi4.pages.autoru;
 
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
