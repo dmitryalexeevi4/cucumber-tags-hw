@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
         strict = true,
         plugin = "json:target/cucumber-report.json",
         features = "src/test/resources/feature",
-        glue = {"com.github.dmitryalexeevi4.stepdefs"},
+        glue = {"com.github.dmitryalexeevi4.cucumber.stepdefs"},
         tags = "@all"
 )
 public class CucumberRunnerTest extends AbstractTestNGCucumberTests {

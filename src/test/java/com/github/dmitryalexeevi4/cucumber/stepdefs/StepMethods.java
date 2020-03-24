@@ -1,4 +1,4 @@
-package com.github.dmitryalexeevi4.stepdefs;
+package com.github.dmitryalexeevi4.cucumber.stepdefs;
 
 public class StepMethods {
     public void titleCheck(String pageName){};

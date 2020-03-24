@@ -1,6 +1,6 @@
-package com.github.dmitryalexeevi4.stepdefs.autoru;
+package com.github.dmitryalexeevi4.cucumber.stepdefs.autoru;
 
-import com.github.dmitryalexeevi4.stepdefs.StepMethods;
+import com.github.dmitryalexeevi4.cucumber.stepdefs.StepMethods;
 import com.github.dmitryalexeevi4.pages.autoru.CarsPage;
 import io.cucumber.java.ru.*;
 import org.testng.Assert;

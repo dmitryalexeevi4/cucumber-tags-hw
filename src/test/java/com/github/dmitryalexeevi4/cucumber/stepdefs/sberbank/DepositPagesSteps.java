@@ -1,6 +1,6 @@
-package com.github.dmitryalexeevi4.stepdefs.sberbank;
+package com.github.dmitryalexeevi4.cucumber.stepdefs.sberbank;
 
-import com.github.dmitryalexeevi4.stepdefs.StepMethods;
+import com.github.dmitryalexeevi4.cucumber.stepdefs.StepMethods;
 import com.github.dmitryalexeevi4.pages.sberbank.*;
 import io.cucumber.java.ru.*;
 import org.openqa.selenium.By;
