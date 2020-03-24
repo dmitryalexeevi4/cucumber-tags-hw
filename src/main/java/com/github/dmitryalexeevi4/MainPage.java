@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 
-public class MainPage extends AbstractPage {
+public class MainPage {
 
     public void clickAdvButton(String carMark) {
         $(By.xpath("//a/div[contains(text(),'" + carMark + "')]"))

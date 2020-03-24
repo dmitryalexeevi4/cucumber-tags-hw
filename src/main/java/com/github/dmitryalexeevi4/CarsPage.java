@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class CarsPage extends AbstractPage {
+public class CarsPage {
     private SelenideElement showButton = $(".ListingCarsFilters-module__column > button");
 
     private String advCount() {
@@ -15,6 +15,7 @@ public class CarsPage extends AbstractPage {
     public int getAdvCount() {
         return Integer.parseInt(advCount()) / 10;
     }
+
 
     public int getModelAdvCount(String model) {
         return Integer.parseInt($(By.xpath("//div[@class = 'ListingPopularMMM-module__item']/a[.='" + model + "']/following::div")).getText()) / 10;

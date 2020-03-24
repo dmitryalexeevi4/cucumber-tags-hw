@@ -18,7 +18,7 @@ public class MainPageSteps {
 
     @Тогда("открывается страница, в названии которой содержится текст {string}")
     public void mainPageTitleCheck(String prefix) {
-        Assert.assertTrue(mainPage.getTitle().startsWith(prefix));
+        Assert.assertTrue(title().startsWith(prefix));
     }
 
     @Затем("запоминаем количество автомобилей марки {string}")
@@ -33,7 +33,7 @@ public class MainPageSteps {
 
     @Тогда("открывается страница, в названии которой содержится текст - {string}")
     public void carPageTitleCheck(String buyCarMark) {
-        Assert.assertTrue(carsPage.getTitle().startsWith(buyCarMark));
+        Assert.assertTrue(title().startsWith(buyCarMark));
         actualAdvCount = carsPage.getAdvCount();
         Assert.assertEquals(actualAdvCount, expectedAdvCount);
     }
