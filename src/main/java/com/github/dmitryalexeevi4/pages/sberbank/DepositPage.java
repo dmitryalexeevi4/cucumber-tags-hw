@@ -31,8 +31,8 @@ public class DepositPage extends Page {
     }
 
     public DepositPage clickCheckboxes(List<String> checkboxes) {
-        for (int index = 0; index < checkboxes.size(); index++) {
-            $(By.xpath("//div[.= '" + checkboxes.get(index) + "']/preceding-sibling::div[@class='kitt-checkbox__control']")).click();
+        for (String checkbox : checkboxes) {
+            $(By.xpath("//div[.= '" + checkbox + "']/preceding-sibling::div[@class='kitt-checkbox__control']")).click();
         }
         return this;
     }
