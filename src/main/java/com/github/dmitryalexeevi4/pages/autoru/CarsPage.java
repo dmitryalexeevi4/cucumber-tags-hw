@@ -3,6 +3,7 @@ package com.github.dmitryalexeevi4.pages.autoru;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 
 public class CarsPage {
@@ -22,6 +23,6 @@ public class CarsPage {
     }
 
     public void clickModelAdvButton(String model) {
-        $(By.xpath("//a[.='" + model + "']")).click();
+        $(By.xpath("//a[.='" + model + "']")).waitUntil(visible, 10000).click();
     }
 }

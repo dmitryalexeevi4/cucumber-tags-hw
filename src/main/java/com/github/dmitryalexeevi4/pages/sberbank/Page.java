@@ -8,7 +8,7 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class Page {
 
-    public Page openTab(String tabName) {
+    public Page moveTo(String tabName) {
         $(By.xpath("//ul[@class = 'lg-menu__list']/li/button/span[text() = '" + tabName + "']")).click();
         return this;
     }

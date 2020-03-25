@@ -4,6 +4,10 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.logging.Logger;
+
 import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
@@ -22,12 +26,14 @@ public class DepositPage extends Page {
         return $$(".offered-products__item");
     }
 
-    public SelenideElement getCheckbox(int index) {
-        return $$(By.cssSelector("label.kitt-checkbox-group__checkbox")).get(index).find(By.cssSelector("input"));
+    public SelenideElement getCheckbox(String checkbox) {
+        return $(By.xpath("//div[.= '" + checkbox + "']/preceding-sibling::input"));
     }
 
-    public DepositPage clickCheckbox(int index) {
-        $$(By.cssSelector(".kitt-checkbox__control")).get(index).click();
+    public DepositPage clickCheckboxes(List<String> checkboxes) {
+        for (int index = 0; index < checkboxes.size(); index++) {
+            $(By.xpath("//div[.= '" + checkboxes.get(index) + "']/preceding-sibling::div[@class='kitt-checkbox__control']")).click();
+        }
         return this;
     }
 }

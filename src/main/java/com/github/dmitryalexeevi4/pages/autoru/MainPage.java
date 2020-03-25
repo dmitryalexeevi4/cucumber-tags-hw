@@ -9,7 +9,7 @@ public class MainPage {
 
     public void clickAdvButton(String carMark) {
         $(By.xpath("//a/div[contains(text(),'" + carMark + "')]"))
-                .shouldBe(visible)
+                .waitUntil(visible, 10000)
                 .click();
     }
 

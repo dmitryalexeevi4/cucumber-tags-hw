@@ -1,6 +1,6 @@
 package com.github.dmitryalexeevi4.cucumber.stepdefs.sberbank;
 
-import com.github.dmitryalexeevi4.cucumber.stepdefs.StepMethods;
+import com.github.dmitryalexeevi4.cucumber.stepdefs.Steps;
 import com.github.dmitryalexeevi4.pages.sberbank.*;
 import io.cucumber.java.ru.*;
 import org.openqa.selenium.By;
@@ -12,12 +12,11 @@ import static com.codeborne.selenide.CollectionCondition.*;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
-public class DepositPagesSteps extends StepMethods {
+public class DepositPagesSteps extends Steps {
     DepositPage depositPage = new DepositPage();
 
     @И("кликает на вкладку {string}")
     public void clickDepositTab(String innerTabName) {
-        Assert.assertEquals(title(), "«Сбербанк» - Подбор вкладов");
         depositPage.clickInnerTab(innerTabName);
     }
 
@@ -27,7 +26,7 @@ public class DepositPagesSteps extends StepMethods {
                 .shouldHaveSize(4)
                 .shouldHave(exactTexts(dataTable));
 
-        depositPage.getCheckbox(2)
+        depositPage.getCheckbox("Онлайн")
                 .shouldBe(checked);
     }
 
@@ -39,10 +38,9 @@ public class DepositPagesSteps extends StepMethods {
     }
 
     @Когда("пользователь кликает на чекбоксы")
-    public void checkboxClicking() {
-        depositPage
-                .clickCheckbox(0)
-                .clickCheckbox(1);
+    public void checkboxClicking(List<String> dataTable) {
+        depositPage.clickCheckboxes(dataTable);
+
     }
 
     @Тогда("остается одна вкладка, {string}")
