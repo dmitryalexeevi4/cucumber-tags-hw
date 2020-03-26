@@ -1,20 +1,17 @@
 package com.github.dmitryalexeevi4.cucumber.stepdefs.autoru;
 
-import com.github.dmitryalexeevi4.cucumber.stepdefs.Steps;
 import io.cucumber.java.ru.*;
 import org.testng.Assert;
 
-import static com.codeborne.selenide.Selenide.title;
 import static com.github.dmitryalexeevi4.cucumber.stepdefs.autoru.MainPageSteps.*;
 import static com.github.dmitryalexeevi4.pages.autoru.CarPage.getCarPage;
 
-public class CarPageSteps extends Steps {
+public class CarPageSteps {
     static int modelAdvCountFromCarPage = 0;
     int advCountFromCarPage = 0;
 
-    @Тогда("открывается страница, в названии которой содержится текст - {string}")
-    public void titleCheck(String buyCarMark) {
-        Assert.assertTrue(title().startsWith(buyCarMark));
+    @И("сверяем текущее количество машин с количеством машин на главной страницы")
+    public void countCheck() {
         advCountFromCarPage = getCarPage().getAdvCount();
         Assert.assertEquals(advCountFromCarPage, advCountFromMainPage);
     }

@@ -1,6 +1,5 @@
 package com.github.dmitryalexeevi4.cucumber.stepdefs.sberbank;
 
-import com.github.dmitryalexeevi4.cucumber.stepdefs.Steps;
 import com.github.dmitryalexeevi4.pages.sberbank.*;
 import io.cucumber.java.ru.*;
 import org.openqa.selenium.By;
@@ -12,7 +11,7 @@ import static com.codeborne.selenide.CollectionCondition.*;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
-public class DepositPagesSteps extends Steps {
+public class DepositPagesSteps {
     DepositPage depositPage = new DepositPage();
 
     @И("кликает на вкладку {string}")
