@@ -14,7 +14,7 @@ public class PersonPageSteps extends Steps {
     @Дано("пользователь входит на сайт - {string}")
     public void openLink(String link) {
         open(link);
-        //$(By.cssSelector("a.cookie-warning__close")).waitUntil(visible, 10000).click();
+        $("a.cookie-warning__close").waitUntil(visible, 10000).click();
     }
 
     @Тогда("открывается страница - {string}")
@@ -25,6 +25,6 @@ public class PersonPageSteps extends Steps {
     @Затем("пользователь открывает страницу {string}")
     public void openSection(String pageName) {
         personPage.moveTo("Вклады").openSection("Вклады");
-        $("title").shouldHave(attribute("text", "«Сбербанк» - " + pageName));
+        $("title").waitUntil(attribute("text", "«Сбербанк» - " + pageName), 5000);
     }
 }

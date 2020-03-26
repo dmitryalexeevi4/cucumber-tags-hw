@@ -6,7 +6,13 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 
-public class CarsPage {
+public class CarPage {
+    private static final CarPage CAR_PAGE = new CarPage();
+
+    public static CarPage getCarPage() {
+        return CAR_PAGE;
+    }
+
     private SelenideElement showButton = $(".ListingCarsFilters-module__column > button");
 
     private String advCount() {

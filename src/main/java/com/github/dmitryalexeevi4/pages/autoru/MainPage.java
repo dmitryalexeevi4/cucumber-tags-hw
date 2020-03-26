@@ -6,6 +6,11 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 
 public class MainPage {
+    private static final MainPage MAIN_PAGE = new MainPage();
+
+    public static MainPage getMainPage() {
+        return MAIN_PAGE;
+    }
 
     public void clickAdvButton(String carMark) {
         $(By.xpath("//a/div[contains(text(),'" + carMark + "')]"))
