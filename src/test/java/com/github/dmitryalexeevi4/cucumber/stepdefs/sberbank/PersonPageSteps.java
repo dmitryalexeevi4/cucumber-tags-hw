@@ -1,9 +1,7 @@
 package com.github.dmitryalexeevi4.cucumber.stepdefs.sberbank;
 
-import com.github.dmitryalexeevi4.cucumber.stepdefs.CommonSteps;
 import com.github.dmitryalexeevi4.pages.sberbank.Page;
 import io.cucumber.java.ru.*;
-import org.testng.Assert;
 
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Condition.*;
