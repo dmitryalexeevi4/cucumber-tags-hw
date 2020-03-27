@@ -17,7 +17,6 @@ pipeline {
             script {
                 allure([includeProperties: false,
                         jdk: '',
-                        properties: [],
                         results: [[path: 'target/allure-results']]
                 ])
             }
