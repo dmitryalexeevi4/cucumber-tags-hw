@@ -11,7 +11,7 @@ public class PersonPageSteps {
 
     @И("закрывает куки")
     public void closeCookie() {
-        $("a.cookie-warning__close").waitUntil(visible, 10000).click();
+        $("a.cookie-warning__close").waitUntil(visible, 20000).click();
     }
 
     @Затем("пользователь открывает страницу {string}")
