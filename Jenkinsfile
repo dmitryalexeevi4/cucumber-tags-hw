@@ -11,15 +11,9 @@ pipeline {
                 sh 'mvn test'
             }
         }
-    }
-    post {
-        always {
-            script {
-                allure([includeProperties: false,
-                        jdk: '',
-                        properties: [],
-                        results: [[path: 'target/allure-results']]
-                ])
+        stage("allure") {
+            steps{
+                 allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results']]
             }
         }
     }
