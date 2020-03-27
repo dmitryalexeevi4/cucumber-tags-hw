@@ -12,7 +12,7 @@ import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
         plugin = "json:target/cucumber-report.json",
         features = "src/test/resources/feature",
         glue = {"com.github.dmitryalexeevi4.cucumber.stepdefs"},
-        tags = "@all"
+        tags = "@sberbankTest"
 )
 public class CucumberRunnerTest extends AbstractTestNGCucumberTests {
     @BeforeClass
