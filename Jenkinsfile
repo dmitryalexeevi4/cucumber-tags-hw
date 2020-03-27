@@ -1,14 +1,19 @@
 pipeline {
     agent any
     stages {
-        stage('test') {
+        stage("Clean") {
             steps {
                 bat 'mvn clean test'
             }
         }
-        stage('allure'){
-            steps {
-                allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
+    }
+    post {
+        always {
+            script {
+                allure([includeProperties: false,
+                        jdk: '',
+                        results: [[path: 'target/allure-results']]
+                ])
             }
         }
     }
