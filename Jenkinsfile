@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('test') {
             steps {
-                bat 'mvn clean test'
+                powershell label: 'test', script: '''mvn clean test'''
             }
         }
     }
