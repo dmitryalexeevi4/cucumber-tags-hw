@@ -16,12 +16,12 @@ public class CarPageSteps {
         Assert.assertEquals(advCountFromCarPage, advCountFromMainPage);
     }
 
-    @Затем("сохраняем количество объявлений конкретной модели {string}")
+    @Затем("сохраняем количество объявлений конкретной модели {word}")
     public void saveModelAdvCount(String model) {
         modelAdvCountFromCarPage = getCarPage().getModelAdvCount(model);
     }
 
-    @Затем("пользователь переходит на страницу с объявлениями по модели {string}")
+    @Затем("пользователь переходит на страницу с объявлениями по модели {word}")
     public void enterCarModelPage(String model) {
         getCarPage().clickModelAdvButton(model);
     }

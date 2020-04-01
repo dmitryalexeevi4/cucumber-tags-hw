@@ -3,8 +3,7 @@ package com.github.dmitryalexeevi4.cucumber.stepdefs;
 import io.cucumber.java.ru.*;
 import org.testng.Assert;
 
-import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.title;
+import static com.codeborne.selenide.Selenide.*;
 
 public class CommonSteps {
     @Дано("пользователь входит на сайт {string}")
